@@ -1,1 +1,2 @@
+pip3 install webdriver_manager
 pip3 install selenium
