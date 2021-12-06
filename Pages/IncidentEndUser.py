@@ -1,4 +1,9 @@
+""" Incident module end user Page"""
+
 import time
+
+import allure
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,9 +15,11 @@ from Pages.BasePage import BasePage
 from PILTools import Image
 
 
+@allure.severity(allure.severity_level.NORMAL)
 class IncidentEndUser(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
+
 
     def choose_category(self):
         self.click(Locators.CATEGORY)
@@ -33,59 +40,40 @@ class IncidentEndUser(BasePage):
     def fill_summary(self):
         self.click(Locators.SUMMARY_TEXTBOX)
         self.enter_text(Locators.SUMMARY_TEXTBOX,"TEST")
-        time.sleep(3)
 
     def fill_contact_phone_number(self):
         self.click(Locators.CONTACT_PHONE_NUMBER_TEXTBOX)
         self.enter_text(Locators.CONTACT_PHONE_NUMBER_TEXTBOX, "1234")
-        time.sleep(3)
 
     def fill_description(self):
         self.click(Locators.DESCRIPTION_TEXTBOX)
         self.enter_text(Locators.DESCRIPTION_TEXTBOX, "DESC")
-        time.sleep(3)
 
     def click_submit(self):
         self.click(Locators.SUBMIT_BTN)
         time.sleep(8)
 
-
-
-
-
-
-    # def test_fun(self):
-    #     self.click(Locators.TEST)
-    #     self.enter_text(Locators.TEST, "shoes")
-
-
-    # def setUserName(self, username):
-    #     self.driver.find_element_by_id(self.textbox_loginid).clear()
-    #     self.driver.find_element_by_id(self.textbox_loginid).send_keys(username)
-    #
-    # def clicknext(self):
-    #     self.driver.find_element_by_id(self.nextbutton).click()
-    #
-    # def setPassword(self, password):
-    #     self.driver.find_element_by_class_name(self.textbox_loginps).clear()
-    #     self.driver.find_element_by_class_name(self.textbox_loginps).send_keys(password)
-    #
-    # def clicklogin(self):
-    #     self.driver.find_element_by_css_selector(self.loginbutton).click()
-    #
-    # def clickPush(self):
-    #     self.driver.find_element_by_xpath(self.pushbutton).click()
-
     def fill_incident_end_user_form(self):
-        self.click(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
-        self.enter_text(Locators.SEARCH_TEXTBOX_MODULE_END_USER, "Something is broken")
-        self.send_enter(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
-        self.click(Locators.INCIDENT_MODULE_OPTION)
-        print("inside page")
-        self.choose_category()
-        self.choose_urgency()
-        self.fill_summary()
-        self.fill_contact_phone_number()
-        self.fill_description()
-        self.click_submit()
+        try:
+            self.click(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
+            self.enter_text(Locators.SEARCH_TEXTBOX_MODULE_END_USER, "Something is broken")
+            self.send_enter(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
+            self.click(Locators.INCIDENT_MODULE_OPTION)
+            print("inside page")
+            self.choose_category()
+            self.choose_urgency()
+            self.fill_summary()
+            self.fill_contact_phone_number()
+            self.fill_description()
+            self.click_submit()
+            allure.attach(self.driver.get_screenshot_as_png(), name="Something is broken",
+                          attachment_type=AttachmentType.PNG)
+
+
+        except:
+
+            allure.attach(self.driver.get_screenshot_as_png(), name="Incident end user",
+                          attachment_type=AttachmentType.PNG)
+            assert False
+
 

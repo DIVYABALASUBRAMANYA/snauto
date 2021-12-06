@@ -7,4 +7,14 @@
     <orderEntry type="jdk" jdkName="Python 3.9 (pythonProject)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PyNamespacePackagesService">
+    <option name="namespacePackageFolders">
+      <list>
+        <option value="$MODULE_DIR$/Driver" />
+        <option value="$MODULE_DIR$/Locators" />
+        <option value="$MODULE_DIR$/TestCase" />
+        <option value="$MODULE_DIR$/Pages" />
+      </list>
+    </option>
+  </component>
 </module>
