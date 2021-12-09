@@ -11,7 +11,7 @@ class Locators:
 
     USER_NAME_OKTA_TEXTBOX = (By.ID, "idp-discovery-username")
     NEXT_OKTA_BUTTON = (By.ID, "idp-discovery-submit")
-    PASSWORD_OKTA_TEXTBOX = (By.ID, "input8")
+    PASSWORD_OKTA_TEXTBOX = (By.XPATH, "//input[@type = 'password']")
     SUBMIT_OKTA_BUTTON = (By.XPATH, "//*[@class = 'button button-primary']")
     SEND_PUSH_OKTA_BUTTON = (By.XPATH, "//*[@class = 'button button-primary']")
 
