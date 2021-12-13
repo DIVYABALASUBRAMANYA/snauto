@@ -2,7 +2,7 @@
 
 import unittest
 from selenium import webdriver
-from TestCase.BaseTestCase import TestBaseTestCase
+# from TestCase.BaseTestCase import TestBaseTestCase
 from Pages.IncidentEndUser import IncidentEndUser
 from TestCases.test_base import BaseTest
 import time
@@ -15,9 +15,12 @@ from Config.excelfunctions import read_data
 
 class TestIncidentEndUser(BaseTest):
 
+
     # def setUp(self):
     #     # to call the setUp() method of base class or super class.
     #     super().setUp()
+
+    @pytest.mark.smoke
     @pytest.mark.parametrize('category,urgency,summary, contact_number, description', read_data("Something is Broken"))
     def test_incident_page_end_user(self, category, urgency, summary, contact_number, description):
         print("inside")

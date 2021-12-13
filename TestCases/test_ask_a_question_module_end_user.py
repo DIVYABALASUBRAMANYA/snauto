@@ -16,7 +16,7 @@ class TestAskAQuestionModuleEndUser(BaseTest):
     # def setUp(self):
     #     # to call the setUp() method of base class or super class.
     #     super().setUp()
-
+    @pytest.mark.smoke
     @pytest.mark.parametrize('office,summary, description', read_data("Ask A Question"))
     def test_ask_a_question_module_end_user(self, office, summary, description):
     # def test_ask_a_question_module_end_user(self,):
