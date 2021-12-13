@@ -53,7 +53,7 @@ class IncidentEndUser(BasePage):
         self.click(Locators.SUBMIT_BTN)
         time.sleep(8)
 
-    def fill_incident_end_user_form(self):
+    def fill_incident_end_user_form(self, category,urgency, summary, contact_number, description):
         try:
             self.click(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
             self.enter_text(Locators.SEARCH_TEXTBOX_MODULE_END_USER, "Something is broken")
