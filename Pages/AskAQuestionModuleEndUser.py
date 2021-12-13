@@ -48,7 +48,7 @@ class AskAQuestionModuleEndUser(BasePage):
             self.click(Locators.ASK_A_QUESTION_CLICK)
             time.sleep(2)
 
-            self.click(Locators.TITLE_ASK_A_QUESTION)
+            self.is_visible(Locators.TITLE_ASK_A_QUESTION)
 
             self.fill_office(office)
             self.fill_summary(summary)

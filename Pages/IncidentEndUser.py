@@ -59,7 +59,9 @@ class IncidentEndUser(BasePage):
             self.enter_text(Locators.SEARCH_TEXTBOX_MODULE_END_USER, "Something is broken")
             self.send_enter(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
             self.click(Locators.INCIDENT_MODULE_OPTION)
-            print("inside page")
+
+            self.click(Locators.TITLE_SOMETHING_IS_BROKEN)
+
             self.choose_category()
             self.choose_urgency()
             self.fill_summary()

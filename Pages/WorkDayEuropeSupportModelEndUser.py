@@ -33,44 +33,44 @@ class WorkDayEuropeSupportModelEndUser(BasePage):
         # self.click(Locators.SEND_PUSH_OKTA_BUTTON)
         # time.sleep(30)
 
-    def select_issue_inquiry(self):
+    def select_issue_inquiry(self, issue_type):
         self.click(Locators.ISSUE_ENQUIRY_WORKDAY_EUROPE_DROPDOWN)
         time.sleep(3)
         self.click(Locators.ISSUE_ENQUIRY_WORKDAY_EUROPE_TEXTBOX)
         time.sleep(5)
-        self.enter_text(Locators.ISSUE_ENQUIRY_WORKDAY_EUROPE_TEXTBOX, "Program")
+        self.enter_text(Locators.ISSUE_ENQUIRY_WORKDAY_EUROPE_TEXTBOX, issue_type)
         time.sleep(3)
         self.send_enter(Locators.ISSUE_ENQUIRY_WORKDAY_EUROPE_TEXTBOX)
         # allure.attach(self.driver.get_screenshot_as_png(), name="TESTSS", attachment_type=AttachmentType.PNG)
 
-    def fill_description(self):
+    def fill_description(self, desc):
         self.click(Locators.DESCRIPTION_WORKDAY_EUROPE_TEXTBOX)
-        self.enter_text(Locators.DESCRIPTION_WORKDAY_EUROPE_TEXTBOX, "DESC")
-        time.sleep(3)
+        self.enter_text(Locators.DESCRIPTION_WORKDAY_EUROPE_TEXTBOX, desc)
         self.send_enter(Locators.DESCRIPTION_WORKDAY_EUROPE_TEXTBOX)
-
-
 
     def click_submit(self):
         self.click(Locators.SUBMIT_BUTTON_WORKDAY_EUROPE_BUTTON)
         time.sleep(8)
 
-    def fill_workday_europe_support_model_end_user(self):
+    def fill_workday_europe_support_model_end_user(self, issue_type, description):
         try:
             self.click(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
             self.enter_text(Locators.SEARCH_TEXTBOX_MODULE_END_USER, "Workday Europe Support")
             self.send_enter(Locators.SEARCH_TEXTBOX_MODULE_END_USER)
             self.click(Locators.WORK_DAY_EUROPE_SUPPORT_OPTION)
-            self.select_issue_inquiry()
-            self.fill_description()
+
+            self.is_visible(Locators.TITLE_WORKDAY_EUROPE_SUPPORT_MODEL)
+
+            self.select_issue_inquiry(issue_type)
+            self.fill_description(description)
             self.click_submit()
 
-            allure.attach(self.driver.get_screenshot_as_png(), name="Work Day Europe Support",
+            allure.attach(self.driver.get_screenshot_as_png(), name="Work Day Europe Support Model",
                       attachment_type=AttachmentType.PNG)
 
         except:
 
-            allure.attach(self.driver.get_screenshot_as_png(), name="Work Day Europe Support",
+            allure.attach(self.driver.get_screenshot_as_png(), name="Work Day Europe Support Model",
                          attachment_type=AttachmentType.PNG)
             assert False
 

@@ -26,6 +26,7 @@ class Locators:
     URGENCY = (By.ID, "s2id_sp_formfield_urgency")
     URGENCY_SEARCH_BOX = (By.ID, "s2id_autogen2_search")
     TEST = (By.ID, "twotabsearchtextbox")
+    TITLE_SOMETHING_IS_BROKEN = (By.XPATH, "//h1[text() = 'Something is Broken']")
 
     SUMMARY_TEXTBOX = (By.ID, "sp_formfield_short_description")
     CONTACT_PHONE_NUMBER_TEXTBOX = (By.ID, "sp_formfield_contact_number1")
@@ -49,6 +50,7 @@ class Locators:
 # End user portal for Workday europe support model
 
     WORK_DAY_EUROPE_SUPPORT_OPTION = (By.XPATH, "//span[@class ='highlight mark']")
+    TITLE_WORKDAY_EUROPE_SUPPORT_MODEL =(By.XPATH, "//h1[text()='Workday Europe Support']")
     DESCRIPTION_WORKDAY_EUROPE_TEXTBOX = (By.ID, "sp_formfield_desc")
     ISSUE_ENQUIRY_WORKDAY_EUROPE_DROPDOWN = (By.XPATH, "//*[@id='s2id_sp_formfield_issue_inquiry']")
     ISSUE_ENQUIRY_WORKDAY_EUROPE_TEXTBOX = (By.XPATH, "//label[text() = 'Issue / Inquiry Area']/following-sibling::input")
@@ -59,6 +61,7 @@ class Locators:
 # End user portal for I Need something
 
     I_NEED_SOMETHING_CLICK = (By.XPATH, "//*[@class = 'ta-img ng-scope']")
+    TITLE_I_NEED_SOMETHING = (By.XPATH, "//h1[text() = 'I need Something']")
     SUMMARY_REQUEST_TEXTBOX = (By.ID, "sp_formfield_short_description")
     CONTACT_NUMBER_REQUEST_TEXTBOX = (By.ID, "sp_formfield_contact_number1")
     DESCRIPTION_REQUEST_TEXTBOX = (By.ID, "sp_formfield_description")
@@ -118,6 +121,7 @@ class Locators:
 # Access Module end user
 
     ACCESS_CLICK = (By.XPATH, "//a[@href='?id=sc_cat_item&sys_id=d9fd0d9cdb9b23404a017cde3b9619ed']")
+    TITLE_ACCESS = (By.XPATH, "//h1[text() = 'Access']")
     APPLICATION_REQUIRED_ACCESS_TEXTBOX = (By.ID, "sp_formfield_application_required")
     SUMMARY_ACCESS_TEXTBOX = (By.ID, "sp_formfield_short_description")
     DESCRIPTION_ACCESS_TEXTBOX = (By.ID, "sp_formfield_description")
@@ -191,6 +195,9 @@ class Locators:
 # DAM Enhancement Request
 
     DAM_ENHANCEMENT_REQUEST_CLICK = (By.XPATH, "//*[@href='?id=sc_cat_item&sys_id=dcd73b6edb4637407e5649ee3b961940']")
+    DAM_ENHANCEMENT_REQUEST_TITLE = (By.XPATH, "//h1[text()='DAM Enhancement Request']")
+    REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST = (By.ID, "s2id_sp_formfield_requested_for")
+    REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX  = (By.XPATH, "//label[text()='Requested for']/following-sibling::input")
     OFFICE_DAM_ENHANCEMENT_REQUEST = (By.ID, "s2id_sp_formfield_location")
     OFFICE_DAM_ENHANCEMENT_REQUEST_TEXTBOX = (By.XPATH, "//label[text() = 'OfficeOffice']/following-sibling::input")
     URGENCY_DAM_ENHANCEMENT_REQUEST = (By.ID, "s2id_sp_formfield_urgency")
