@@ -100,6 +100,8 @@ class Locators:
 # Password reset
 
     PASSWORD_RESET_MODULE_CLICK = (By.XPATH, "//a[@href='?id=sc_cat_item&sys_id=6d2a8290db9f23404a017cde3b9619c3']")
+    CALLER_PASSWORD_RESET = (By.ID, "s2id_sp_formfield_caller_id")
+    CALLER_PASSWORD_RESET_TEXTBOX = (By.XPATH, "//label[text() = 'Caller']/following-sibling::input")
     APPLICATION_NAME_PASSWORD_REST_TEXTBOX = (By.ID, "sp_formfield_application")
     SUMMARY_PASSWORD_RESET_TEXTBOX = (By.ID, "sp_formfield_short_description")
     DESCRIPTION_PASSWORD_RESET_TEXTBOX = (By.ID, "sp_formfield_description")
@@ -145,6 +147,8 @@ class Locators:
 
     EDITORIAL_SYSTEMS_CLICK = (By.XPATH, "//a[@href='?id=sc_cat_item&sys_id=58b33fa6db4637407e5649ee3b961990']")
     EDITORIAL_SYSTEMS_TITLE = (By.XPATH, "//h1[text() = 'Editorial Systems Incident']")
+    CALLER_EDITORIAL_SYSTEMS = (By.ID, "s2id_sp_formfield_caller_id")
+    CALLER_EDITORIAL_SYSTEMS_TEXTBOX = (By.XPATH, "//label[text() = 'Caller']/following-sibling::input")
     OFFICE_EDITORIAL_SYSTEMS = (By.ID, "s2id_sp_formfield_location")
     OFFICE_EDITORIAL_SYSTEMS_TEXTBOX = (By.XPATH, "//label[text() = 'OfficeOffice']/following-sibling::input")
     AFFECTED_USER_EDITORIAL_SYSTEMS = (By.ID, "s2id_sp_formfield_u_affected_end_user")

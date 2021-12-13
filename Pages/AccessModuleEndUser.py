@@ -6,6 +6,7 @@ from Pages.BasePage import BasePage
 import time
 
 
+@allure.severity(allure.severity_level.NORMAL)
 class AccessModuleEndUser(BasePage):
 
     def __init__(self, driver):

@@ -6,18 +6,22 @@ from Pages.BasePage import BasePage
 import time
 
 
+@allure.severity(allure.severity_level.NORMAL)
 class DAMEnhancementRequestModuleEndUser(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
     def fill_requested_for(self, requested_for):
-        self.click(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST)
-        self.click(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
-        time.sleep(3)
-        self.enter_text(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX, requested_for)
-        time.sleep(5)
-        self.send_enter(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
-        time.sleep(5)
+        if requested_for is None:
+            pass
+        else:
+            self.click(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST)
+            self.click(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
+            time.sleep(3)
+            self.enter_text(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX, requested_for)
+            time.sleep(5)
+            self.send_enter(Locators.REQUESTED_FOR_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
+            time.sleep(5)
 
     def fill_office(self, office):
         self.click(Locators.OFFICE_DAM_ENHANCEMENT_REQUEST)
@@ -29,12 +33,15 @@ class DAMEnhancementRequestModuleEndUser(BasePage):
         time.sleep(5)
 
     def choose_urgency(self, urgency):
-        self.click(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST)
-        self.click(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
-        time.sleep(3)
-        self.enter_text(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST_TEXTBOX, urgency)
-        self.send_enter(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
-        time.sleep(3)
+        if urgency is None:
+            pass
+        else:
+            self.click(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST)
+            self.click(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
+            time.sleep(3)
+            self.enter_text(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST_TEXTBOX, urgency)
+            self.send_enter(Locators.URGENCY_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
+            time.sleep(3)
 
     def choose_dam_platform(self, DAM_platform):
         self.click(Locators.DAM_PLATFORM_DAM_ENHANCEMENT_REQUEST)
@@ -51,11 +58,14 @@ class DAMEnhancementRequestModuleEndUser(BasePage):
         self.send_enter(Locators.EDITORIAL_ROLE_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
 
     def choose_brand(self, brand):
-        self.click(Locators.BRAND_DAM_ENHANCEMENT_REQUEST)
-        self.click(Locators.BRAND_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
-        self.enter_text(Locators.BRAND_DAM_ENHANCEMENT_REQUEST_TEXTBOX, brand)
-        time.sleep(3)
-        self.send_enter(Locators.BRAND_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
+        if brand is None:
+            pass
+        else:
+            self.click(Locators.BRAND_DAM_ENHANCEMENT_REQUEST)
+            self.click(Locators.BRAND_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
+            self.enter_text(Locators.BRAND_DAM_ENHANCEMENT_REQUEST_TEXTBOX, brand)
+            time.sleep(3)
+            self.send_enter(Locators.BRAND_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
 
     def fill_summary(self, summary):
         self.click(Locators.SUMMARY_DAM_ENHANCEMENT_REQUEST_TEXTBOX)
