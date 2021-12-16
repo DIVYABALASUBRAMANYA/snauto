@@ -4,7 +4,7 @@ import openpyxl
 
 def read_data(sheet_name):
     listli = []
-    path = "/Users/dbalasub/PycharmProjects/pythonProject/Locators/DataSheet.xlsx"
+    path = "/Users/dbalasub/PycharmProjects/pythonProject/DataForTest/DataSheet.xlsx"
     workbook = openpyxl.load_workbook(path)
     sheet = workbook[sheet_name]
     rows = sheet.max_row
@@ -18,8 +18,6 @@ def read_data(sheet_name):
         # print(val)
         # listli.append(sheet.cell(r, c).value)
     return listli
-
-
 
 
 

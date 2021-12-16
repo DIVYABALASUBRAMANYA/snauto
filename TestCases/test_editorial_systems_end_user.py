@@ -14,7 +14,7 @@ class TestEditorialSystemEndUser(BaseTest):
     # def setUp(self):
     #     # to call the setUp() method of base class or super class.
     #     super().setUp()
-
+    @pytest.mark.smoke
     @pytest.mark.parametrize('caller,office, affected_user, urgency,editorial_platform, issue_type , device, operating_system, browser,summary, description',
                              read_data("Editorial Systems Incident"))
     def test_editorial_system_end_user(self, caller,office, affected_user, urgency,editorial_platform, issue_type , device, operating_system, browser,summary, description):

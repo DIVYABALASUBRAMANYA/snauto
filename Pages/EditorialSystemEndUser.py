@@ -109,7 +109,8 @@ class EditorialSystemModuleEndUser(BasePage):
             time.sleep(3)
 
     def fill_summary(self, summary):
-        self.enter_text(Locators.SUMMARY_EDITORIAL_SYSTEMS_TEXTBOX, summary )
+        self.enter_text(Locators.SUMMARY_EDITORIAL_SYSTEMS_TEXTBOXxxxx, summary )
+        time.sleep(4)
         self.send_enter(Locators.SUMMARY_EDITORIAL_SYSTEMS_TEXTBOX)
 
     def fill_description(self, description):
